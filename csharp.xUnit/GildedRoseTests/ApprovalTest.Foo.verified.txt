@@ -1,0 +1,15 @@
+﻿[
+  {
+    Name: foo,
+    SellIn: -1
+  },
+  {
+    Name: Aged Brie,
+    SellIn: 1,
+    Quality: 1
+  },
+  {
+    Name: Bar,
+    Quality: 49
+  }
+]

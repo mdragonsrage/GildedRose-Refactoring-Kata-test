@@ -86,4 +86,74 @@ public class GildedRoseTest
         app.UpdateQuality();
         Assert.Equivalent(expectedItems, items);
     }
+    
+    public static IEnumerable<object[]> VariousDaysItems()
+    {
+        yield return 
+        [ 
+            1,
+            new List<Item> { new() { Name = "Common Item", SellIn = 1, Quality = 1 } },
+            new List<Item> { new() { Name = "Common Item", SellIn = 0, Quality = 0 } }
+        ];
+
+        yield return
+        [
+            2,
+            new List<Item>
+            {
+                new() { Name = "Aged Brie", SellIn = 10, Quality = 10 },
+                new() { Name = "Aged Brie", SellIn = 8, Quality = 50 }
+            },
+            new List<Item>
+            {
+                new() { Name = "Aged Brie", SellIn = 8, Quality = 12 },
+                new() { Name = "Aged Brie", SellIn = 6, Quality = 50 }
+            }
+        ];
+
+        yield return
+        [
+            5,
+            new List<Item>
+            {
+                new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 15, Quality = 50 },
+                new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 10, Quality = 5 },
+            },
+            new List<Item>
+            {
+                new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 15, Quality = 50 },
+                new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 10, Quality = 5 }
+            }
+        ];
+
+        yield return
+        [
+            7,
+            new List<Item>
+            {
+                new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 15, Quality = 0 },
+                new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 6, Quality = 10 },
+                new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 5, Quality = 10 },
+            },
+            new List<Item>
+            {
+                new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 8, Quality = 9 },
+                new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -1, Quality = 0 },
+                new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -2, Quality = 0 },
+            },
+        ];
+    }
+
+    [Theory]
+    [MemberData(nameof(VariousDaysItems))]
+    public void ItemsAfterVariousDayTest(int days, List<Item> items, List<Item> expectedItems)
+    {
+        GildedRose app = new(items);
+        int i = 0;
+        for (; i < days; i++)
+        {
+            app.UpdateQuality();
+        }
+        Assert.Equivalent(expectedItems, items);
+    }
 }

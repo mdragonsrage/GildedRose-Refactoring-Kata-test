@@ -16,7 +16,12 @@ public class ApprovalTest
     [Fact]
     public Task Foo()
     {
-        Item[] items = { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
+        Item[] items = 
+        { 
+            new Item { Name = "foo", SellIn = 0, Quality = 0 },
+            new Item { Name = "Aged Brie", SellIn = 2, Quality = 0 },
+            new Item { Name = "Bar", SellIn = 1, Quality = 50}
+        };
         GildedRose app = new GildedRose(items);
         app.UpdateQuality();
         

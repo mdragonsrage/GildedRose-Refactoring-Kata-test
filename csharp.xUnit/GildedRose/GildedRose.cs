@@ -20,85 +20,15 @@ public class GildedRose
                 UpdateBrie(item);
                 break;
             case "Backstage passes to a TAFKAL80ETC concert": 
+                UpdateBackstagePasses(item);
+                break;
             case "Sulfuras, Hand of Ragnaros":
-                    DefaultMethod(item);
+                UpdateSellIn(item);
                 break;
             default:
                 UpdateCommon(item);
                 break;
         };
-        
-        //DefaultMethod(item);
-    }
-
-    private static void DefaultMethod(Item item)
-    {
-        if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert")
-        {
-            if (item.Quality > 0)
-            {
-                if (item.Name != "Sulfuras, Hand of Ragnaros")
-                {
-                    item.Quality = item.Quality - 1;
-                }
-            }
-        }
-        else
-        {
-            if (item.Quality < 50)
-            {
-                item.Quality = item.Quality + 1;
-
-                if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-                {
-                    if (item.SellIn < 11)
-                    {
-                        if (item.Quality < 50)
-                        {
-                            item.Quality = item.Quality + 1;
-                        }
-                    }
-
-                    if (item.SellIn < 6)
-                    {
-                        if (item.Quality < 50)
-                        {
-                            item.Quality = item.Quality + 1;
-                        }
-                    }
-                }
-            }
-        }
-
-        UpdateSellIn(item);
-
-        if (item.SellIn < 0)
-        {
-            if (item.Name != "Aged Brie")
-            {
-                if (item.Name != "Backstage passes to a TAFKAL80ETC concert")
-                {
-                    if (item.Quality > 0)
-                    {
-                        if (item.Name != "Sulfuras, Hand of Ragnaros")
-                        {
-                            item.Quality = item.Quality - 1;
-                        }
-                    }
-                }
-                else
-                {
-                    item.Quality = item.Quality - item.Quality;
-                }
-            }
-            else
-            {
-                if (item.Quality < 50)
-                {
-                    item.Quality = item.Quality + 1;
-                }
-            }
-        }
     }
 
     private static void UpdateSellIn(Item item)
@@ -130,6 +60,28 @@ public class GildedRose
             item.Quality += 1;
         }
 
+    }
+
+    private static void UpdateBackstagePasses(Item item)
+    {
+        if (item.Quality < 50)
+        {
+            item.Quality += 1;
+        }
+        
+        if (item.SellIn < 11 && item.Quality < 50)
+        {
+            item.Quality += 1;
+        }
+
+        if (item.SellIn < 6 && item.Quality < 50)
+        {
+            item.Quality += 1;
+        }
+        
+        UpdateSellIn(item);
+        if (item.SellIn >= 0) return;
+        item.Quality = 0;
     }
 
     public void UpdateQuality()

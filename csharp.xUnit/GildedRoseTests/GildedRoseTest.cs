@@ -19,8 +19,18 @@ public class GildedRoseTest
     {
         yield return 
         [ 
-            new List<Item> { new() { Name = "Common Item", SellIn = 1, Quality = 1 } },
-            new List<Item> { new() { Name = "Common Item", SellIn = 0, Quality = 0 } }
+            new List<Item>
+            {
+                new() { Name = "Common Item", SellIn = 1, Quality = 1 },
+                new() { Name = "Common Item", SellIn = 0, Quality = 10 },
+                new() { Name = "Common Item", SellIn = -1, Quality = 10 },
+            },
+            new List<Item>
+            {
+                new() { Name = "Common Item", SellIn = 0, Quality = 0 },
+                new() { Name = "Common Item", SellIn = -1, Quality = 8 },
+                new() { Name = "Common Item", SellIn = -2, Quality = 8 },
+            }
         ];
 
         yield return
@@ -28,12 +38,16 @@ public class GildedRoseTest
             new List<Item>
             {
                 new() { Name = "Aged Brie", SellIn = 10, Quality = 10 },
-                new() { Name = "Aged Brie", SellIn = 8, Quality = 50 }
+                new() { Name = "Aged Brie", SellIn = 8, Quality = 50 },
+                new() { Name = "Aged Brie", SellIn = 0, Quality = 10 },
+                new() { Name = "Aged Brie", SellIn = -1, Quality = 10 },
             },
             new List<Item>
             {
                 new() { Name = "Aged Brie", SellIn = 9, Quality = 11 },
-                new() { Name = "Aged Brie", SellIn = 7, Quality = 50 }
+                new() { Name = "Aged Brie", SellIn = 7, Quality = 50 },
+                new() { Name = "Aged Brie", SellIn = -1, Quality = 12 },
+                new() { Name = "Aged Brie", SellIn = -2, Quality = 12 },
             }
         ];
 
@@ -44,12 +58,18 @@ public class GildedRoseTest
                 new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 15, Quality = 50 },
                 new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 15, Quality = 51 },
                 new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 10, Quality = 5 },
+                new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 5 },
+                new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = -1, Quality = 5 },
+                new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = -2, Quality = 5 },
             },
             new List<Item>
             {
                 new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 15, Quality = 50 },
                 new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 15, Quality = 51 },
-                new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 10, Quality = 5 }
+                new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 10, Quality = 5 },
+                new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 5 },
+                new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = -1, Quality = 5 },
+                new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = -2, Quality = 5 },
             }
         ];
 
@@ -64,6 +84,7 @@ public class GildedRoseTest
                 new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 3, Quality = 1 },
                 new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 1, Quality = 10 },
                 new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 0, Quality = 10 },
+                new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -1, Quality = 10 },
             },
             new List<Item>
             {
@@ -74,6 +95,7 @@ public class GildedRoseTest
                 new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 2, Quality = 4 },
                 new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 0, Quality = 13 },
                 new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -1, Quality = 0 },
+                new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -2, Quality = 0 },
             },
         ];
     }
@@ -95,6 +117,20 @@ public class GildedRoseTest
             new List<Item> { new() { Name = "Common Item", SellIn = 1, Quality = 1 } },
             new List<Item> { new() { Name = "Common Item", SellIn = 0, Quality = 0 } }
         ];
+        
+        yield return 
+        [ 
+            2,
+            new List<Item> { new() { Name = "Common Item", SellIn = 1, Quality = 1 } },
+            new List<Item> { new() { Name = "Common Item", SellIn = -1, Quality = 0 } }
+        ];
+        
+        yield return 
+        [ 
+            2,
+            new List<Item> { new() { Name = "Common Item", SellIn = 1, Quality = 5 } },
+            new List<Item> { new() { Name = "Common Item", SellIn = -1, Quality = 2 } }
+        ];
 
         yield return
         [
@@ -102,12 +138,14 @@ public class GildedRoseTest
             new List<Item>
             {
                 new() { Name = "Aged Brie", SellIn = 10, Quality = 10 },
-                new() { Name = "Aged Brie", SellIn = 8, Quality = 50 }
+                new() { Name = "Aged Brie", SellIn = 8, Quality = 50 },
+                new() { Name = "Aged Brie", SellIn = 1, Quality = 10 }
             },
             new List<Item>
             {
                 new() { Name = "Aged Brie", SellIn = 8, Quality = 12 },
-                new() { Name = "Aged Brie", SellIn = 6, Quality = 50 }
+                new() { Name = "Aged Brie", SellIn = 6, Quality = 50 },
+                new() { Name = "Aged Brie", SellIn = -1, Quality = 13 }
             }
         ];
 

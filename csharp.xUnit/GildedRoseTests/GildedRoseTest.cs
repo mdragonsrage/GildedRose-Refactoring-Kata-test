@@ -22,12 +22,14 @@ public class GildedRoseTest
             new List<Item>
             {
                 new() { Name = "Common Item", SellIn = 1, Quality = 1 },
+                new() { Name = "Common Item", SellIn = 2, Quality = 0 },
                 new() { Name = "Common Item", SellIn = 0, Quality = 10 },
                 new() { Name = "Common Item", SellIn = -1, Quality = 10 },
             },
             new List<Item>
             {
                 new() { Name = "Common Item", SellIn = 0, Quality = 0 },
+                new() { Name = "Common Item", SellIn = 1, Quality = 0 },
                 new() { Name = "Common Item", SellIn = -1, Quality = 8 },
                 new() { Name = "Common Item", SellIn = -2, Quality = 8 },
             }

@@ -19,9 +19,24 @@ public class ApprovalTest
         Item[] items = 
         { 
             new Item { Name = "foo", SellIn = 0, Quality = 0 },
-            new Item { Name = "Aged Brie", SellIn = 2, Quality = 0 },
-            new Item { Name = "Bar", SellIn = 1, Quality = 50}
         };
+        GildedRose app = new GildedRose(items);
+        app.UpdateQuality();
+        
+        return Verifier.Verify(items);
+    }
+
+    [Fact]
+    public Task BaseApproval()
+    {
+        Item[] items =
+        {
+            new Item { Name = "Aged Brie", SellIn = 2, Quality = 0 },
+            new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 10, Quality = 5 },
+            new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 15, Quality = 0 },
+            new Item { Name = "Generic Item", SellIn = 10, Quality = 5}
+        };
+        
         GildedRose app = new GildedRose(items);
         app.UpdateQuality();
         

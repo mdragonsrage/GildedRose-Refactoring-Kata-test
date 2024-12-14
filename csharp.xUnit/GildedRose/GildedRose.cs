@@ -68,7 +68,7 @@ public class GildedRose
         UpdateSellIn(item);
         if (item.Quality >= 50) return;
         item.Quality += 1;
-        if (item.SellIn < 0)
+        if (item.SellIn < 0 && item.Quality < 50)
         {
             item.Quality += 1;
         }

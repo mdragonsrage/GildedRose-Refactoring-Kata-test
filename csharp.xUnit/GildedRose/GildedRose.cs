@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace GildedRoseKata;
 
 public class GildedRose
 {
     private readonly IList<Item> _items;
-
+    private static readonly string[] ItemTypes = ["Aged Brie", "Sulfuras", "Backstage passes", "Conjured"];
+    
     public GildedRose(IList<Item> items)
     {
         _items = items;
@@ -13,19 +15,18 @@ public class GildedRose
 
     private static void UpdateQualityForItem(Item item)
     {
-        string name = item.Name;
-        switch (name)
+        string type = ItemTypes.FirstOrDefault<string>(it => item.Name.StartsWith(it));
+        switch (type)
         {
             case "Aged Brie":
                 UpdateBrie(item);
                 break;
-            case "Backstage passes to a TAFKAL80ETC concert": 
+            case "Backstage passes": 
                 UpdateBackstagePasses(item);
                 break;
-            case "Sulfuras, Hand of Ragnaros":
-                UpdateSellIn(item);
+            case "Sulfuras":
                 break;
-            case "Conjured Mana Cake":
+            case "Conjured":
                 UpdateConjured(item);
                 break;
             default:
@@ -36,10 +37,7 @@ public class GildedRose
 
     private static void UpdateSellIn(Item item)
     {
-        if (item.Name != "Sulfuras, Hand of Ragnaros")
-        {
             item.SellIn -= 1;
-        }
     }
 
     private static void UpdateCommon(Item item)

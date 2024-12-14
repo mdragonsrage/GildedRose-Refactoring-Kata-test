@@ -79,11 +79,11 @@ public class GildedRoseTest
         [
             new List<Item>
             {
-                new() { Name = "Sulfuras, Illitium", SellIn = 0, Quality = 5 },
                 new() { Name = "Sulfuras, Illitium", SellIn = 15, Quality = 50 },
-                new() { Name = "Sulfuras, Illitium", SellIn = 10, Quality = 5 },
-                new() { Name = "Sulfuras, Illitium", SellIn = -1, Quality = 5 },
                 new() { Name = "Sulfuras, Illitium", SellIn = 15, Quality = 51 },
+                new() { Name = "Sulfuras, Illitium", SellIn = 10, Quality = 5 },
+                new() { Name = "Sulfuras, Illitium", SellIn = 0, Quality = 5 },
+                new() { Name = "Sulfuras, Illitium", SellIn = -1, Quality = 5 },
                 new() { Name = "Sulfuras, Illitium", SellIn = -2, Quality = 5 },
             },
             new List<Item>

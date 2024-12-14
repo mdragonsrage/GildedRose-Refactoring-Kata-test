@@ -62,7 +62,7 @@ public class GildedRoseTest
                 new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 10, Quality = 5 },
                 new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 5 },
                 new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = -1, Quality = 5 },
-                new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = -2, Quality = 5 },
+                new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = -2, Quality = 5 }
             },
             new List<Item>
             {
@@ -71,10 +71,32 @@ public class GildedRoseTest
                 new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 10, Quality = 5 },
                 new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 5 },
                 new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = -1, Quality = 5 },
-                new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = -2, Quality = 5 },
+                new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = -2, Quality = 5 }
             }
         ];
 
+        yield return
+        [
+            new List<Item>
+            {
+                new() { Name = "Sulfuras, Illitium", SellIn = 0, Quality = 5 },
+                new() { Name = "Sulfuras, Illitium", SellIn = 15, Quality = 50 },
+                new() { Name = "Sulfuras, Illitium", SellIn = 10, Quality = 5 },
+                new() { Name = "Sulfuras, Illitium", SellIn = -1, Quality = 5 },
+                new() { Name = "Sulfuras, Illitium", SellIn = 15, Quality = 51 },
+                new() { Name = "Sulfuras, Illitium", SellIn = -2, Quality = 5 },
+            },
+            new List<Item>
+            {
+                new() { Name = "Sulfuras, Illitium", SellIn = 15, Quality = 50 },
+                new() { Name = "Sulfuras, Illitium", SellIn = 15, Quality = 51 },
+                new() { Name = "Sulfuras, Illitium", SellIn = 10, Quality = 5 },
+                new() { Name = "Sulfuras, Illitium", SellIn = 0, Quality = 5 },
+                new() { Name = "Sulfuras, Illitium", SellIn = -1, Quality = 5 },
+                new() { Name = "Sulfuras, Illitium", SellIn = -2, Quality = 5 },
+            }
+        ];
+        
         yield return
         [
             new List<Item>
@@ -86,7 +108,7 @@ public class GildedRoseTest
                 new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 3, Quality = 1 },
                 new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 1, Quality = 10 },
                 new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 0, Quality = 10 },
-                new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -1, Quality = 10 },
+                new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -1, Quality = 10 }
             },
             new List<Item>
             {
@@ -97,7 +119,33 @@ public class GildedRoseTest
                 new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 2, Quality = 4 },
                 new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 0, Quality = 13 },
                 new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -1, Quality = 0 },
-                new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -2, Quality = 0 },
+                new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -2, Quality = 0 }
+            },
+        ];
+        
+        yield return
+        [
+            new List<Item>
+            {
+                new() { Name = "Backstage passes to Hyrule", SellIn = 15, Quality = 0 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = 11, Quality = 0 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = 10, Quality = 1 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = 6, Quality = 0 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = 3, Quality = 1 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = 1, Quality = 10 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = 0, Quality = 10 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = -1, Quality = 10 },
+            },
+            new List<Item>
+            {
+                new() { Name = "Backstage passes to Hyrule", SellIn = 14, Quality = 1 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = 10, Quality = 1 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = 9, Quality = 3 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = 5, Quality = 2 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = 2, Quality = 4 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = 0, Quality = 13 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = -1, Quality = 0 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = -2, Quality = 0 },
             },
         ];
     }
@@ -165,6 +213,21 @@ public class GildedRoseTest
                 new() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 10, Quality = 5 }
             }
         ];
+        
+        yield return
+        [
+            5,
+            new List<Item>
+            {
+                new() { Name = "Sulfuras, Illitium", SellIn = 15, Quality = 50 },
+                new() { Name = "Sulfuras, Illitium", SellIn = 10, Quality = 5 },
+            },
+            new List<Item>
+            {
+                new() { Name = "Sulfuras, Illitium", SellIn = 15, Quality = 50 },
+                new() { Name = "Sulfuras, Illitium", SellIn = 10, Quality = 5 }
+            }
+        ];
 
         yield return
         [
@@ -180,6 +243,23 @@ public class GildedRoseTest
                 new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 8, Quality = 9 },
                 new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -1, Quality = 0 },
                 new() { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = -2, Quality = 0 },
+            },
+        ];
+        
+        yield return
+        [
+            7,
+            new List<Item>
+            {
+                new() { Name = "Backstage passes to Hyrule", SellIn = 15, Quality = 0 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = 6, Quality = 10 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = 5, Quality = 10 },
+            },
+            new List<Item>
+            {
+                new() { Name = "Backstage passes to Hyrule", SellIn = 8, Quality = 9 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = -1, Quality = 0 },
+                new() { Name = "Backstage passes to Hyrule", SellIn = -2, Quality = 0 },
             },
         ];
     }
@@ -205,14 +285,26 @@ public class GildedRoseTest
             new() { Name = "Conjured Mana Cake", SellIn = 3, Quality = 51 },
             new() { Name = "Conjured Mana Cake", SellIn = 0, Quality = 10 },
             new() { Name = "Conjured Mana Cake", SellIn = 0, Quality = 2 },
-            new() { Name = "Conjured Mana Cake", SellIn = 0, Quality = 1 }
+            new() { Name = "Conjured Mana Cake", SellIn = 0, Quality = 1 },
+            
+            new() { Name = "Conjured Potion of Healing", SellIn = 10, Quality = 10 },
+            new() { Name = "Conjured Potion of Healing", SellIn = 3, Quality = 51 },
+            new() { Name = "Conjured Potion of Healing", SellIn = 0, Quality = 10 },
+            new() { Name = "Conjured Potion of Healing", SellIn = 0, Quality = 2 },
+            new() { Name = "Conjured Potion of Healing", SellIn = 0, Quality = 1 }
         ];
         List<Item> expectedItems = [
             new() { Name = "Conjured Mana Cake", SellIn = 9, Quality = 8 },
             new() { Name = "Conjured Mana Cake", SellIn = 2, Quality = 49 },
             new() { Name = "Conjured Mana Cake", SellIn = -1, Quality = 6 },
             new() { Name = "Conjured Mana Cake", SellIn = -1, Quality = 0 },
-            new() { Name = "Conjured Mana Cake", SellIn = -1, Quality = 0 }
+            new() { Name = "Conjured Mana Cake", SellIn = -1, Quality = 0 },
+            
+            new() { Name = "Conjured Potion of Healing", SellIn = 9, Quality = 8 },
+            new() { Name = "Conjured Potion of Healing", SellIn = 2, Quality = 49 },
+            new() { Name = "Conjured Potion of Healing", SellIn = -1, Quality = 6 },
+            new() { Name = "Conjured Potion of Healing", SellIn = -1, Quality = 0 },
+            new() { Name = "Conjured Potion of Healing", SellIn = -1, Quality = 0 }
         ];
         GildedRose app = new (items);
         app.UpdateQuality();

@@ -196,4 +196,26 @@ public class GildedRoseTest
         }
         Assert.Equivalent(expectedItems, items);
     }
+
+    [Fact]
+    public void DegradeConjuredItemsTest()
+    {
+        List<Item> items = [
+            new() { Name = "Conjured Mana Cake", SellIn = 10, Quality = 10 },
+            new() { Name = "Conjured Mana Cake", SellIn = 3, Quality = 51 },
+            new() { Name = "Conjured Mana Cake", SellIn = 0, Quality = 10 },
+            new() { Name = "Conjured Mana Cake", SellIn = 0, Quality = 2 },
+            new() { Name = "Conjured Mana Cake", SellIn = 0, Quality = 1 }
+        ];
+        List<Item> expectedItems = [
+            new() { Name = "Conjured Mana Cake", SellIn = 9, Quality = 8 },
+            new() { Name = "Conjured Mana Cake", SellIn = 2, Quality = 49 },
+            new() { Name = "Conjured Mana Cake", SellIn = -1, Quality = 6 },
+            new() { Name = "Conjured Mana Cake", SellIn = -1, Quality = 0 },
+            new() { Name = "Conjured Mana Cake", SellIn = -1, Quality = 0 }
+        ];
+        GildedRose app = new (items);
+        app.UpdateQuality();
+        Assert.Equivalent(expectedItems, items);
+    }
 }

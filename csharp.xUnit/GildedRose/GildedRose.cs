@@ -25,6 +25,9 @@ public class GildedRose
             case "Sulfuras, Hand of Ragnaros":
                 UpdateSellIn(item);
                 break;
+            case "Conjured Mana Cake":
+                UpdateConjured(item);
+                break;
             default:
                 UpdateCommon(item);
                 break;
@@ -42,6 +45,18 @@ public class GildedRose
     private static void UpdateCommon(Item item)
     {
         UpdateSellIn(item);
+        DegradeCommonQuality(item);
+    }
+
+    private static void UpdateConjured(Item item)
+    {
+        UpdateSellIn(item);
+        DegradeCommonQuality(item);
+        DegradeCommonQuality(item);
+    }
+
+    private static void DegradeCommonQuality(Item item)
+    {
         if (item.Quality <= 0) return;
         item.Quality -= 1;
         if (item.SellIn < 0 && item.Quality > 0)
@@ -59,7 +74,6 @@ public class GildedRose
         {
             item.Quality += 1;
         }
-
     }
 
     private static void UpdateBackstagePasses(Item item)

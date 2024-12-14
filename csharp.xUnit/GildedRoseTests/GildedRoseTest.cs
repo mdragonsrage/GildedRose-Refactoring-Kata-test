@@ -42,6 +42,7 @@ public class GildedRoseTest
                 new() { Name = "Aged Brie", SellIn = 10, Quality = 10 },
                 new() { Name = "Aged Brie", SellIn = 8, Quality = 50 },
                 new() { Name = "Aged Brie", SellIn = 0, Quality = 10 },
+                new() { Name = "Aged Brie", SellIn = 0, Quality = 49 },
                 new() { Name = "Aged Brie", SellIn = -1, Quality = 10 },
             },
             new List<Item>
@@ -49,6 +50,7 @@ public class GildedRoseTest
                 new() { Name = "Aged Brie", SellIn = 9, Quality = 11 },
                 new() { Name = "Aged Brie", SellIn = 7, Quality = 50 },
                 new() { Name = "Aged Brie", SellIn = -1, Quality = 12 },
+                new() { Name = "Aged Brie", SellIn = -1, Quality = 50 },
                 new() { Name = "Aged Brie", SellIn = -2, Quality = 12 },
             }
         ];
@@ -189,13 +191,15 @@ public class GildedRoseTest
             {
                 new() { Name = "Aged Brie", SellIn = 10, Quality = 10 },
                 new() { Name = "Aged Brie", SellIn = 8, Quality = 50 },
-                new() { Name = "Aged Brie", SellIn = 1, Quality = 10 }
+                new() { Name = "Aged Brie", SellIn = 1, Quality = 10 },
+                new() { Name = "Aged Brie", SellIn = 1, Quality = 49 }
             },
             new List<Item>
             {
                 new() { Name = "Aged Brie", SellIn = 8, Quality = 12 },
                 new() { Name = "Aged Brie", SellIn = 6, Quality = 50 },
-                new() { Name = "Aged Brie", SellIn = -1, Quality = 13 }
+                new() { Name = "Aged Brie", SellIn = -1, Quality = 13 },
+                new() { Name = "Aged Brie", SellIn = -1, Quality = 50 }
             }
         ];
 
